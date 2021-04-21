@@ -1,0 +1,52 @@
+<div class="bg-light">
+    <div class="col-md-10 mx-auto py-4 py-md-6">
+
+        <!-- <p class="text-center h3 text-primary mb-4 mb-md-5">Productos para Gatos</p>
+        <div class="grillaProducts">
+            <app-card-producto *ngFor="let producto of productosGatos | async" [producto]="producto"></app-card-producto>
+        </div> -->
+
+        <div *ngIf="productosGatosAlimentoSeco != 0">
+            <p class="tituloGrupo">Alimento Seco</p>
+            <div class="grillaProducts">
+                <app-card-producto *ngFor="let producto of productosGatosAlimentoSeco" [producto]="producto"></app-card-producto>
+            </div>
+        </div>
+
+        <div *ngIf="productosGatosAlimentoHumedo != 0">
+            <p class="tituloGrupo">Alimento Húmedo</p>
+            <div class="grillaProducts">
+                <app-card-producto *ngFor="let producto of productosGatosAlimentoHumedo" [producto]="producto"></app-card-producto>
+            </div>
+        </div>
+
+        <div *ngIf="productosGatosNutraceuticos != 0">
+            <p class="tituloGrupo">Nutracéuticos</p>
+            <div class="grillaProducts">
+                <app-card-producto *ngFor="let producto of productosGatosNutraceuticos" [producto]="producto"></app-card-producto>
+            </div>
+        </div>
+
+        <div *ngIf="productosGatosAntipulgas != 0">
+            <p class="tituloGrupo">Antipulgas</p>
+            <div class="grillaProducts">
+                <app-card-producto *ngFor="let producto of productosGatosAntipulgas" [producto]="producto"></app-card-producto>
+            </div>
+        </div>
+
+        <div *ngIf="productosGatosVacunas != 0">
+            <p class="tituloGrupo">Vacunas</p>
+            <div class="grillaProducts">
+                <app-card-producto *ngFor="let producto of productosGatosVacunas" [producto]="producto"></app-card-producto>
+            </div>
+        </div>
+
+        <div *ngIf="productosGatosHigieneCuidado != 0">
+            <p class="tituloGrupo">Higiene y Cuidado</p>
+            <div class="grillaProducts">
+                <app-card-producto *ngFor="let producto of productosGatosHigieneCuidado" [producto]="producto"></app-card-producto>
+            </div>
+        </div>
+
+    </div>
+</div>

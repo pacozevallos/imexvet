@@ -1,0 +1,54 @@
+<div class="">
+    <div class="col-md-10 mx-auto d-flex justify-content-between align-items-center">
+        <a class="my-2 my-md-3" routerLink="/">
+            <img class="logoImexvet" src="assets/images/logoImexvet.svg" alt="logoImexvetPeru">
+        </a>
+        <div class="d-none d-md-block">
+            <div class="d-flex justify-content-end small text-muted mb-2">
+                <a class="text-reset" href="mailto:info@imexvetperu.com">info@imexvetperu.com</a>
+                <span class="text-muted mx-2">/</span>
+                <a class="text-reset" href="tel:013459413">(01) 3459 413</a>
+            </div>
+
+            <!-- <div class="d-flex align-items-center">
+                <a class="ml-4" *ngFor="let link of links" [routerLink]="link.url">{{link.nombre}}</a>
+            </div> -->
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-white px-0">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item mr-3">
+                            <a class="nav-link" routerLink="/">Inicio</a>
+                        </li>
+                        <li class="nav-item mr-3">
+                            <a class="nav-link" routerLink="/nosotros">Nosotros</a>
+                        </li>
+                        <li class="nav-item dropdown mr-3">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Productos</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" routerLink="/productos/perros">Productos para Perros</a>
+                                <a class="dropdown-item" routerLink="/productos/gatos">Productos para Gatos</a>
+                            </div>
+                        </li>
+                        <li class="nav-item mr-3">
+                            <a class="nav-link" routerLink="/catalogo">Catálogo</a>
+                        </li>
+                        <li class="nav-item mr-3">
+                            <a class="nav-link" routerLink="/puntosVenta">Puntos de venta</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link pr-0" routerLink="/contacto">Contacto</a>
+                        </li>
+                        
+                    </ul>
+                    <a class="btn btn-secondary ml-3" href="https://imexvetperu.riqra.com/" target="_blank">Tienda virtual</a>
+                </div>
+            </nav>
+
+        </div>
+        <div class="d-block d-md-none">
+            <button mat-icon-button (click)="openModalMenuMobile()"><img src="assets/images/menuMobile.svg"></button>
+        </div>
+
+    </div>
+</div>

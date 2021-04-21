@@ -1,0 +1,40 @@
+<div class="bg-light">
+    <div class="col-md-10 mx-auto py-4 py-md-6">
+
+        <div *ngIf="productosPerrosAlimentoSeco != 0">
+            <p class="tituloGrupo">Alimento Seco</p>
+            <div class="grillaProducts">
+                <app-card-producto *ngFor="let producto of productosPerrosAlimentoSeco" [producto]="producto"></app-card-producto>
+            </div>
+        </div>
+
+        <div *ngIf="productosPerrosAlimentoHumedo != 0">
+            <p class="tituloGrupo">Alimento Húmedo</p>
+            <div class="grillaProducts">
+                <app-card-producto *ngFor="let producto of productosPerrosAlimentoHumedo" [producto]="producto"></app-card-producto>
+            </div>
+        </div>
+
+        <div *ngIf="productosPerrosNutraceuticos != 0">
+            <p class="tituloGrupo">Nutracéuticos</p>
+            <div class="grillaProducts">
+                <app-card-producto *ngFor="let producto of productosPerrosNutraceuticos" [producto]="producto"></app-card-producto>
+            </div>
+        </div>
+
+        <div *ngIf="productosPerrosAntipulgas != 0">
+            <p class="tituloGrupo">Antipulgas</p>
+            <div class="grillaProducts">
+                <app-card-producto *ngFor="let producto of productosPerrosAntipulgas" [producto]="producto"></app-card-producto>
+            </div>
+        </div>
+
+        <div *ngIf="productosPerrosVacunas != 0">
+            <p class="tituloGrupo">Vacunas</p>
+            <div class="grillaProducts">
+                <app-card-producto *ngFor="let producto of productosPerrosVacunas" [producto]="producto"></app-card-producto>
+            </div>
+        </div>
+
+    </div>
+</div>

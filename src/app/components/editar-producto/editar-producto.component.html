@@ -1,0 +1,112 @@
+<div class="container p-0 py-md-5">
+    <div class="d-flex justify-content-between align-items-center mb-2 mb-md-3">
+        <p class="h4 mb-0 text-primary">Editar Producto</p>
+        <button mat-icon-button color="primary" (click)="cancelar()"><mat-icon>close</mat-icon> </button>
+    </div>
+
+    <form [formGroup]="formProduct" (submit)="onSubmit()" novalidate>
+        <div class="row">
+
+            <div class="col-12" formGroupName="familia">
+                <mat-checkbox class="mr-3" *ngFor="let animal of animales | async" [formControlName]="animal.valor">{{animal.nombre}}</mat-checkbox>
+            </div>
+
+            <mat-form-field appearance="standard" class="col-6">
+                <mat-label>Categoría</mat-label>
+                <mat-select formControlName="categoria">
+                    <mat-option *ngFor="let categoria of categorias | async" [value]="categoria.nombre">{{categoria.nombre}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field appearance="standard" class="col-6">
+                <mat-label>Marca</mat-label>
+                <mat-select formControlName="marca">
+                    <mat-option *ngFor="let marca of marcas | async" [value]="marca.nombre">{{marca.nombre}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+
+            <mat-form-field appearance="standard" class="col-12">
+                <mat-label>Nombre</mat-label>
+                <input matInput formControlName="nombre" placeholder="Ingresa un nombre">
+            </mat-form-field>
+
+            <!-- <mat-form-field appearance="standard" class="col-12">
+            <mat-label>Url Imagen</mat-label>
+            <input matInput formControlName="image" placeholder="Ingresa la url de la imagen">
+        </mat-form-field> -->
+
+        <div class="col-12">
+            <img class="border rounded-lg" [src]="data.image" width="120px">
+        </div>
+
+        
+
+            <mat-form-field appearance="standard" class="col-12">
+                <mat-label>Imagen</mat-label>
+                <ngx-mat-file-input #removableInput formControlName="image" placeholder="Seleccionar imagen" accept=".jpg, .jpeg, .png" (change)="detectFiles($event)"></ngx-mat-file-input>
+                <button mat-icon-button matSuffix *ngIf="!removableInput.empty" (click)="removableInput.clear($event)">
+          <mat-icon>clear</mat-icon>
+          </button>
+                <mat-icon matSuffix *ngIf="removableInput.empty">image_search</mat-icon>
+                <mat-error *ngIf="errorImagen()">{{errorImagen()}}</mat-error>
+                <mat-hint>Peso máximo de la imagen: 1 MB.</mat-hint>
+            </mat-form-field>
+
+
+
+            <mat-radio-group class="col-12 mt-3 mt-md-4" formControlName="tipo">
+                <mat-radio-button class="mr-3" *ngFor="let tipo of tipos" [value]="tipo">{{tipo}}</mat-radio-button>
+            </mat-radio-group>
+
+            <div class="col-12" *ngIf="formProduct.value.tipo === 'Presentación única'">
+                <mat-form-field appearance="standard" class="w-100">
+                    <mat-label>Precio S/.</mat-label>
+                    <input type="number" matInput formControlName="precio">
+                </mat-form-field>
+            </div>
+
+            <div class="col-12" formArrayName="presentaciones" *ngIf="formProduct.value.tipo === 'Presentación múltiple'">
+                <div *ngFor="let presentacion of formProduct.controls['presentaciones']['controls']; let i = index;">
+                    <div class="d-flex" [formGroupName]="i">
+                        <div class="row w-100">
+                            <mat-form-field appearance="standard" class="col-4 col-md-4">
+                                <mat-label>Presentación</mat-label>
+                                <input matInput formControlName="presentacion">
+                            </mat-form-field>
+                            <mat-form-field appearance="standard" class="col-4 col-md-4">
+                                <mat-label>Medida</mat-label>
+                                <mat-select formControlName="medida">
+                                    <mat-option *ngFor="let medida of medidas" [value]="medida">{{medida}}</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                            <mat-form-field appearance="standard" class="col-4 col-md-4">
+                                <mat-label>Precio S/.</mat-label>
+                                <input matInput type="number" formControlName="precio">
+                            </mat-form-field>
+                        </div>
+                        <div class="flex-shrink-1 d-flex align-items-center">
+                            <button type="button" mat-icon-button (click)="eliminarPresentacion(i)"><mat-icon class="material-icons-outlined">delete</mat-icon></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="">
+                    <button class="mb-3 btn btn-link btn-sm px-0" type="button" (click)="agregarPresentacion()">Agregar presentación</button>
+                </div>
+            </div>
+
+
+
+            <div class="col-12 text-right">
+                <button class="btn btn-primary px-3">
+              <mat-icon class="align-middle" *ngIf="!deshabilitado">add</mat-icon>
+              <mat-spinner *ngIf="deshabilitado" [diameter]="24" class="float-left mr-2"></mat-spinner>
+              Confirmar edición
+            </button>
+            </div>
+            Metadata:
+            <pre><code>{{ meta | async }}</code></pre>
+        </div>
+    </form>
+
+</div>

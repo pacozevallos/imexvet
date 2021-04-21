@@ -1,0 +1,436 @@
+//font-family
+$font-family-base: "Nunito";
+//border-radius
+$border-radius: .3rem;
+$border-radius-lg: .6rem;
+$border-radius-sm: .3rem;
+//colores
+$primary:#2F3985;
+$secondary: #E31E26;
+$success: #78B727;
+$info:#0070B9;
+$warning: #FFCE1F;
+$danger:#d9453d;
+$light: #f5f5fa;
+$dark: #333333;
+$text-muted: rgba($dark, 0.6);
+// Espacios
+$spacer: 1rem;
+$spacers: ( 0: 0, 1: ($spacer * .25), 2: ($spacer * .75), 3: ($spacer * 1.3), 4: ($spacer * 2), 5: ($spacer * 3), 6: ($spacer * 5), 7: ($spacer * 7), 8: ($spacer * 10), 9: ($spacer * 14), 10: ($spacer * 20));
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
+//Custom theme Angular Material
+@import '~@angular/material/theming';
+$custom-typography: mat-typography-config( $font-family: 'Nunito' !important);
+@include mat-core($custom-typography);
+$bv-brand: ( 50: #ebebfb,
+100: #cdcdf6,
+200: #abacf0,
+300: #898be9,
+400: #7072e5,
+500: #5759e0,
+600: #4f51dc,
+700: #4648d8,
+800: #3c3ed3,
+900: #2c2ecb,
+A100: #ffffff,
+A200: #d9d9ff,
+A400: #a6a7ff,
+A700: #8c8eff,
+contrast: ( 50: #000000,
+100: #000000,
+200: #000000,
+300: #000000,
+400: #ffffff,
+500: #ffffff,
+600: #ffffff,
+700: #ffffff,
+800: #ffffff,
+900: #ffffff,
+A100: #000000,
+A200: #000000,
+A400: #000000,
+A700: #000000,
+));
+$bv-orange: ( 50: #e7f5e9,
+100: #c4e6c9,
+200: #9cd6a5,
+300: #74c680,
+400: #57b965,
+500: #39ad4a,
+600: #33a643,
+700: #2c9c3a,
+800: #249332,
+900: #178322,
+A100: #baffc0,
+A200: #87ff91,
+A400: #54ff63,
+A700: #3bff4b,
+contrast: ( 50: #000000,
+100: #000000,
+200: #000000,
+300: #000000,
+400: #000000,
+500: #ffffff,
+600: #ffffff,
+700: #ffffff,
+800: #ffffff,
+900: #ffffff,
+A100: #000000,
+A200: #000000,
+A400: #000000,
+A700: #000000,
+));
+$my-app-primary: mat-palette($bv-brand);
+$my-app-accent: mat-palette($bv-orange);
+$my-app-theme: mat-light-theme($my-app-primary,
+$my-app-accent);
+@include angular-material-theme($my-app-theme);
+body,
+html {
+    color: $dark;
+    font-size: 17px;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+}
+
+table {
+    width: 100% !important;
+}
+
+.logoImexvet {
+    height: 90px;
+    @include media-breakpoint-only(xs) {
+        height: 60px;
+    }
+}
+
+// .btn {
+//     border-radius: 5rem;
+//     padding-left: 1.3rem;
+//     padding-right: 1.3rem;
+// }
+.btn-outline-primary {
+    border-width: 2px;
+}
+
+.mat-drawer-container {
+    color: $dark;
+    background-color: white;
+    position: relative !important;
+}
+
+*:focus {
+    outline: 0px !important;
+    box-shadow: none !important;
+}
+
+.mat-button-focus-overlay {
+    background-color: transparent!important;
+}
+
+mat-icon {
+    vertical-align: middle;
+}
+
+.imagesBannerPrincipal {
+    // background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 480px;
+    background-size: cover;
+    @include media-breakpoint-only(xs) {
+        background-size: auto 60%;
+        background-repeat: no-repeat;
+        background-position: 85% top;
+        height: 520px;
+    }
+}
+
+.boxTextBanner {
+    width: 40%;
+    line-height: 1.1;
+    @include media-breakpoint-only(xs) {
+        // padding-top: 1rem;
+        width: 100%;
+        text-align: center;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        padding-bottom: 1.2rem;
+    }
+    .titulo {
+        font-size: 3.3rem;
+        color: $primary;
+        font-weight: 600;
+        // font-family: 'nerissemibold';
+        @include media-breakpoint-only(xs) {
+            font-size: 1.8rem;
+        }
+    }
+    .subtitulo {
+        font-size: 1.3rem;
+        color: $text-muted;
+        // font-family: 'neristhin';
+        @include media-breakpoint-only(xs) {
+            font-size: 1rem;
+            // display: none;
+        }
+    }
+
+    .logoBox {
+        height: 130px;
+        @include media-breakpoint-only(xs) {
+            height: 80px;
+        }
+    }
+    .logoWide {
+        height: 81px;
+        @include media-breakpoint-only(xs) {
+            height: 60px;
+        }
+    }
+}
+
+.carousel-indicators li {
+    width: 10px;
+    height: 10px;
+    margin: -10px 8px;
+    border-radius: 100%;
+    background-color: $primary;
+    @include media-breakpoint-only(xs) {
+        width: 10px;
+        height: 10px;
+        margin-bottom: -15px;
+    }
+}
+
+.imageProductAdmin {
+    width: 5rem;
+    height: 4rem;
+    object-fit: cover;
+}
+
+.modalFullScreen {
+    max-width: none !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    @include media-breakpoint-only(xs) {
+        width: 100vw !important;
+        height: 100vh !important;
+    }
+}
+
+.breadcrumb {
+    padding: 0;
+    background: none;
+}
+
+.tituloModal {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+    @include media-breakpoint-only(xs) {
+        font-size: 1.2rem;
+    }
+}
+
+.grillaProducts {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.35rem;
+    @include media-breakpoint-only(lg) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    @include media-breakpoint-only(md) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @include media-breakpoint-only(sm) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @include media-breakpoint-only(xs) {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+.grillaPuntosVenta {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+    @include media-breakpoint-only(xs) {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+.cardProduct {
+    border-top-left-radius: 12rem;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 12em;
+    border-bottom-left-radius: 1rem;
+}
+
+.imageCardProduct {
+    width: 75%;
+    height: auto;
+    margin-top: -4rem;
+    // object-fit: cover;
+}
+
+.grillaAnimales {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 5rem;
+    @include media-breakpoint-only(xs) {
+        grid-template-columns: repeat(1, 1fr);
+        row-gap: 1rem;
+    }
+}
+
+#boxMascotas {
+    .iconMascota {
+        height: 110px;
+        @include media-breakpoint-only(xs) {
+            height: 80px;
+        }
+    }
+    .gorro {
+        font-size: 1.5rem;
+        margin-bottom: 5px;
+        font-weight: 300;
+        line-height: 100%;
+        @include media-breakpoint-only(xs) {
+            font-size: 1rem;
+        }
+    }
+    .titulo {
+        font-size: 3rem;
+        margin-bottom: 0px;
+        font-weight: 600;
+        line-height: 100%;
+        @include media-breakpoint-only(xs) {
+            font-size: 2rem;
+        }
+    }
+    .arrow {
+        width: 36px;
+        @include media-breakpoint-only(xs) {
+            width: 24px;
+        }
+    }
+}
+
+.grillaMarcas {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    @include media-breakpoint-only(xs) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+}
+
+.boxMarca {
+    height: 8rem;
+    border: 2px solid rgba($dark, 0.1);
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    @include media-breakpoint-only(xs) {
+        height: 6rem;
+        border-radius: 0.75rem;
+        padding: 1rem;
+    }
+}
+
+.backFooter {
+    height: 346px;
+    background-image: url('assets/images/imgFooter.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    @include media-breakpoint-only(xs) {
+        padding-top: 9rem;
+        padding-bottom: 3rem;
+        height: 100%;
+        background-position: 68% 50%;
+    }
+}
+
+.boxProduct {
+    background: #FFFFFF;
+    box-shadow: 0px 12px 18px rgba(33, 69, 128, 0.09);
+    border-radius: 18px;
+    .image {
+        border-top-left-radius: 18px;
+        border-top-right-radius: 18px;
+    }
+    .titulo {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: $primary;
+        line-height: 110%;
+    }
+}
+
+.bgPuntosVenta {
+    height: 320px;
+    background-image: url('https://firebasestorage.googleapis.com/v0/b/imexvetperu-36f06.appspot.com/o/imagesGenereal%2FimgPuntosVenta.jpg?alt=media&token=5d86460e-d61e-4cae-b7ea-ca73dbd1c827');
+    background-size: cover;
+    background-position: center;
+    @include media-breakpoint-only(xs) {
+        height: 160px;
+        background-size: 150%;
+    }
+}
+
+.bgNosotros {
+    background: linear-gradient(rgba($primary, 0.6) 100%, rgba($primary, 0.9)100%), url('https://firebasestorage.googleapis.com/v0/b/imexvetperu-36f06.appspot.com/o/imagesGenereal%2FimgNosotros.jpg?alt=media&token=74933565-f62c-4ef8-a54c-2ac98d79fdc8');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    @include media-breakpoint-only(xs) {
+        background-size: cover;
+    }
+}
+
+.bgMision {
+    background: linear-gradient(rgba($primary, 0.6) 100%, rgba($primary, 0.9)100%), url('https://firebasestorage.googleapis.com/v0/b/imexvetperu-36f06.appspot.com/o/imagesGenereal%2FimgMision.jpg?alt=media&token=d4a36bb3-cdfd-43ca-8272-24a1c6e2dedd');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    @include media-breakpoint-only(xs) {
+        background-size: cover;
+    }
+}
+
+.bgVision {
+    background: linear-gradient(rgba($primary, 0.6) 100%, rgba($primary, 0.9)100%), url('https://firebasestorage.googleapis.com/v0/b/imexvetperu-36f06.appspot.com/o/imagesGenereal%2FimgVision.jpg?alt=media&token=d37bf1a6-d243-4330-93ed-81af7d5ab221');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    @include media-breakpoint-only(xs) {
+        background-size: cover;
+    }
+}
+
+.bgContacto {
+    background: linear-gradient(rgba($primary, 0.8) 100%, rgba($primary, 0.9)100%), url('https://firebasestorage.googleapis.com/v0/b/imexvetperu-36f06.appspot.com/o/imagesGenereal%2FbgContacto.jpg?alt=media&token=208926de-2a02-4b07-979c-6ee4432cae1a');
+    background-size: cover;
+    background-position: center center;
+    @include media-breakpoint-only(xs) {
+        background-size: 150%;
+    }
+}
+
+.nav-link {
+    font-size: 1.1rem;
+    color: $primary !important;
+}
+
+.tituloGrupo {
+    color: $primary;
+    font-size: 2rem;
+    margin-top: 4rem;
+}

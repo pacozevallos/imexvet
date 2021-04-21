@@ -1,0 +1,52 @@
+<div class="col-md-10 mx-auto py-4 py-md-6">
+
+    <p class="h1 text-center text-primary">Puntos de venta</p>
+
+    <div class="bgPuntosVenta mb-4 mb-md-6 rounded-lg">
+    </div>
+
+    <div class="d-block d-md-none">
+        <div class="grillaPuntosVenta">
+            <div class="border rounded-lg px-3 py-2 d-flex flex-column flex-md-row justify-content-between" *ngFor="let puntoVenta of puntosVenta">
+                <div>
+                    <span class="small text-muted">Nombre</span>
+                    <p class="mb-0">{{puntoVenta.nombre}}</p>
+                </div>
+                <div>
+                    <span class="small text-muted">Web</span><br>
+                    <a [href]="puntoVenta.web" target="blank">{{puntoVenta.web}}</a>
+                </div>
+                <div>
+                    <span class="small text-muted">Facebook</span><br>
+                    <a [href]="puntoVenta.facebook" target="blank" style="word-break: break-all;">{{puntoVenta.facebook}}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="d-none d-md-block">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr class="text-primary">
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Web</th>
+                        <th scope="col">Facebook</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let puntoVenta of puntosVenta">
+                        <td>{{puntoVenta.nombre}}</td>
+                        <td><a [href]="puntoVenta.web" target="blank">{{puntoVenta.web}}</a></td>
+                        <td><a [href]="puntoVenta.facebook" target="blank">{{puntoVenta.facebook}}</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+
+
+</div>

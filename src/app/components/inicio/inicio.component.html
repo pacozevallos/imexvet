@@ -1,0 +1,88 @@
+<div class="bd-example">
+    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+        </ol>
+
+        <div class="carousel-inner">
+            <div class="carousel-item active" *ngFor="let slide of slides; let isFirst = first" [class.active]="isFirst">
+                <!-- <img class="w-100 v-100" src="{{ slide.imagen }}" class="d-block w-100" alt="{{ slide.titulo }}"> -->
+                <div class="imagesBannerPrincipal d-flex align-items-end align-items-md-center" [style.background-image]="'url('+ slide.imagen +')'">
+                    <div class=" col-md-10 mx-auto">
+                        <div class="boxTextBanner">
+                            <img [ngClass]="slide.logoClase" [src]="slide.logo">
+                            <p class="mb-3">
+                            <!-- <p class="titulo">{{slide.titulo}}</p> -->
+                            <p class="subtitulo">{{slide.subtitulo}}</p>
+                            <!-- <a class="btn btn-primary px-3 py-2" [routerLink]="slide.toLink">{{slide.button}}</a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+      </a> -->
+    </div>
+</div>
+
+
+<div class="col-md-10 mx-auto pt-5 py-md-6">
+    <div class="grillaAnimales">
+        <div id="boxMascotas" class="position-relative rounded-lg py-2 d-flex justify-content-around align-items-center" *ngFor="let animal of animales" [style.background-color]="animal.backColor">
+            <img class="iconMascota" [src]="animal.icon">
+            <div class="text-white">
+                <p class="gorro">Productos para</p>
+                <p class="titulo">{{animal.nombre}}s</p>
+            </div>
+            <img class="arrow" src="assets/images/arrowRight.svg">
+            <a class="stretched-link" routerLink="{{animal.link}}"></a>
+        </div>
+    </div>
+</div>
+
+<div class="bg-light">
+    <div class="col-md-10 mx-auto py-4 py-md-6">
+        <p class="text-center h3 text-primary mb-4 mb-md-5">Nuestros Productos</p>
+        <div class="grillaProducts">
+            <app-card-producto *ngFor="let producto of productosHome | async" [producto]="producto"></app-card-producto>
+        </div>
+        <div class="d-flex justify-content-center pt-4 pt-md-5">
+            <a class="btn btn-outline-primary mx-2" routerLink="productos/perros">Productos para Perros</a>
+            <!-- <span class="d-inline-block" style="width: 40px;"></span> -->
+            <a class="btn btn-outline-primary mx-2" routerLink="productos/gatos">Productos para Gatos</a>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+<div class="col-md-10 mx-auto py-4 py-md-6">
+    <div class="text-center col-md-6 mx-auto my-3 my-md-5">
+        <p class="h3 text-primary">Nuestras Marcas</p>
+        <p>Contamos con una gran variedad de productos veterinarios para animales de compañia como gatos, perros, etc.</p>
+    </div>
+    <div class="grillaMarcas">
+        <div class="boxMarca" *ngFor="let marca of marcas | async">
+            <img [src]="marca.logo" [style.width.%]="marca.size">
+        </div>
+    </div>
+</div>
+
+<div class="col-md-5 mx-auto text-center py-4 py-md-6">
+    <p class="text-primary h3">Nosotros</p>
+    <p class="">Somos una empresa peruana con varios años de experiencia en la salud, desarrollo y el bienestar animal. Contamos con socios estratégicos, lo cual nos permite especializarnos en líneas de productos veterinarios de primera línea e importancia a nivel
+        mundial para el bienestar animal.</p>
+    <a class="btn btn-outline-primary" routerLink="/nosotros">Conoce más de nosotros</a>
+</div>

@@ -1,0 +1,66 @@
+<!-- <div class="border bg-primary pl-4 pl-md-5 pb-2 pb-md-3 cardProduct">
+
+    <img class="imageCardProduct mb-4" [src]="producto.image">
+
+    <div class="text-white">
+        <span class="display-4 mr-2 font-weight-bold">{{producto.presentacion.numeroBolsas}}</span>
+        <span class="h2">bolsas</span>
+    </div>
+
+    <p class="text-warning">{{producto.presentacion.pesoBolsa}} gr. cada una, total <strong>{{producto.presentacion.pesoTotal}}</strong> gr.</p>
+
+    <p class="text-white h5 font-weight-bold pb-3 pb-md-4 pr-4">{{producto.nombre}}</p>
+
+    <div class="d-flex justify-content-between align-items-center">
+        <div class="d-flex align-items-center text-warning">
+            <span class="mr-1 h5">S/</span>
+            <span class="h2 font-weight-bold">{{producto.precioNormal}}</span>
+        </div>
+        <div>
+            <button class="btn btn-warning font-weight-bold text-secondary py-2 shadow">LO QUIERO</button>
+        </div>
+    </div>
+</div> -->
+
+<div class="boxProduct">
+    <img class="image" [src]="producto.image" width="100%">
+
+    <div class="p-3 d-flex align-items-start flex-column" style="height: 200px">
+        <div class="d-flex justify-content-between align-items-center w-100 mb-2" style="font-size: 0.7rem;">
+            <span class="rounded p-1 bg-secondary text-white">{{producto.marca}}</span>
+            <span class="text-right">{{producto.categoria}}</span>
+        </div>
+        <div>
+            <p class="titulo mb-2">{{producto.nombre}}</p>
+        </div>
+
+        <!-- <div *ngIf="producto.precio">
+            <p class="small text-muted mb-1">Precio</p>
+            <span>{{producto.precio | currency:'S/ ':'symbol':'1.2'}}</span>
+        </div> -->
+
+        <div *ngIf="!producto.precio">
+            <p class="small text-muted mb-1">Presentaciones:</p>
+            <span class="rounded-sm border px-2 py-1 mr-2 small" *ngFor="let presentacion of producto.presentaciones">{{presentacion.presentacion}} {{presentacion.medida}}</span>
+        </div>
+
+        <!-- <div class="w-100" *ngIf="!producto.precio">
+            <div class="small border-bottom d-flex justify-content-between py-1" *ngFor="let presentacion of producto.presentaciones">
+                <span>{{presentacion.presentacion}} {{presentacion.medida}}</span>
+                <span>{{presentacion.precio | currency:'S/ ':'symbol':'1.2'}}</span>
+            </div>
+        </div> -->
+
+        <!-- <div class="mt-auto d-flex justify-content-end w-100">
+            <a class="btn btn-secondary rounded-pill px-3 align-middle" href="https://api.whatsapp.com/send?phone=51989156202" target="blank">
+                <span class=" align-middle mr-2">
+                <i class="fab fa-whatsapp lead"></i>
+                </span>
+                <span>PEDIR</span>
+            </a>
+        </div> -->
+
+    </div>
+
+
+</div>

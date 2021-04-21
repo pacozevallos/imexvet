@@ -1,0 +1,60 @@
+<div class="py-5 py-md-7 bgNosotros d-flex align-items-center">
+    <div class="col-md-6 mx-auto text-center">
+        <p class="h1 text-center text-white">Somos una empresa Peruana</p>
+        <p class="lead text-white">Con varios años de experiencia en la salud, desarrollo y el bienestar animal. Contamos con socios estratégicos, lo cual nos permite especializarnos en líneas de productos veterinarios de primera línea e importancia a nivel mundial para el bienestar
+            animal.
+        </p>
+    </div>
+</div>
+
+<div class="col-md-10 mx-auto">
+
+    <div class="bgMision py-5 py-md-7 my-4 my-md-7 rounded-lg">
+        <div class="col-md-6 mx-auto text-center text-white">
+            <p class="h1">Misión</p>
+            <p class="lead">Comercializar productos innovadores y de alta calidad que contribuyan a la prevención, tratamiento y control de enfermedades en animales de producción y de compañía.</p>
+        </div>
+    </div>
+
+    <div class="bgVision py-5 py-md-7 my-4 my-md-7 rounded-lg">
+        <div class="col-md-7 mx-auto text-center text-white">
+            <p class="h1">Visión</p>
+            <p class="lead">Convertirnos en el mejor socio estratégico para veterinarias, productores y dueños de mascotas. Buscamos posicionarnos como una empresa proactiva, solida y diversificada permitiéndonos ser uno de los ejes principales en temas relacionados
+                a la salud animal.</p>
+        </div>
+    </div>
+
+    <!-- <div class="row d-flex align-items-center">
+        <div class="col-md-6 p-4 p-md-6">
+            <img src="https://firebasestorage.googleapis.com/v0/b/imexvetperu-36f06.appspot.com/o/imagesGenereal%2FimgMision.png?alt=media&token=9abac323-5c2f-498d-aa20-b8180b2f2ea1" width="100%">
+        </div>
+        <div class="col-md-6">
+            <p class="h1 text-primary">Misión</p>
+            <p class="lead">Comercializar productos innovadores y de alta calidad que contribuyan a la prevención, tratamiento y control de enfermedades en animales de producción y de compañía.</p>
+        </div>
+    </div>
+
+    <div class="row d-flex align-items-center">
+        <div class="col-md-6">
+            <p class="h3 text-primary">Visión</p>
+            <p>Convertirnos en el mejor socio estratégico para veterinarias, productores y dueños de mascotas. Buscamos posicionarnos como una empresa proactiva, solida y diversificada permitiéndonos ser uno de los ejes principales en temas relacionados
+                a la salud animal.</p>
+        </div>
+        <div class="col-md-6 p-4 p-md-6">
+            <img src="https://firebasestorage.googleapis.com/v0/b/imexvetperu-36f06.appspot.com/o/imagesGenereal%2FimgVision.png?alt=media&token=42351ed4-3385-463a-a7b4-bc4407a9ae59" width="100%">
+        </div>
+    </div> -->
+
+    <div class="py-4 pb-md-6 pt-md-0">
+        <div class="text-center col-md-6 mx-auto my-3 my-md-5">
+            <p class="h3 text-primary">Nuestras Marcas</p>
+            <p>Contamos con una gran variedad de productos veterinarios para animales de compañia como gatos, perros, etc.</p>
+        </div>
+        <div class="grillaMarcas">
+            <div class="boxMarca" *ngFor="let marca of marcas | async">
+                <img [src]="marca.logo" [style.width.%]="marca.size">
+            </div>
+        </div>
+    </div>
+
+</div>
