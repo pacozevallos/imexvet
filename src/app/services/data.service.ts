@@ -66,6 +66,7 @@ export class DataService {
   ];
 
   medidas = [
+    'Gr.',
     'Kg.',
     'Ml.',
     'Tab.'

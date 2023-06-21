@@ -28,7 +28,7 @@ const routes: Routes = [
     ]
   },
   {
-    path: 'adminImexvetTop2020', component: AdminComponent,
+    path: 'admin', component: AdminComponent,
     children: [
       { path: 'pedidos', component: AdminPedidosComponent },
       { path: 'productos', component: AdminProductosComponent },

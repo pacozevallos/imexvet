@@ -18,7 +18,7 @@ export class AdminProductosComponent implements OnInit {
 
   count: number;
   loading: boolean;
-  displayedColumns = [ 'imagen', 'nombre', 'publicado', 'destacado', 'detalles', 'editar', 'eliminar' ];
+  displayedColumns = [ 'imagen', 'nombre', 'publicado', 'destacado' ];
   productsData = new MatTableDataSource();
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
   @ViewChild(MatSort, {static: true}) sort: MatSort;

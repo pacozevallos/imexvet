@@ -41,7 +41,7 @@ export class FirebaseService {
 
   getAllProducts() {
     return this.afs.collection('productos', ref => ref
-    .orderBy('nombre', 'asc')
+    .orderBy('fechaCreacion', 'desc')
     ).snapshotChanges().pipe(
       map(actions => actions.map(a => {
         const data = a.payload.doc.data() as Producto;
@@ -68,7 +68,7 @@ export class FirebaseService {
     return this.afs.collection('productos', ref => ref
     .where('publicado', '==', true)
     .where('destacado', '==', true)
-    .limit(4)
+    // .limit(4)
     // .orderBy('nombre', 'asc')
     ).snapshotChanges().pipe(
       map(actions => actions.map(a => {
@@ -131,6 +131,7 @@ export class FirebaseService {
     return this.afs.collection('productos', ref => ref
     .where('familia.perro', '==', true)
     .where('categoria', '==', 'Alimento Seco')
+    .where('publicado', '==', true)
     .orderBy('marca', 'asc')
     .orderBy('fechaCreacion', 'asc')
     ).valueChanges();
@@ -140,6 +141,7 @@ export class FirebaseService {
     return this.afs.collection('productos', ref => ref
     .where('familia.perro', '==', true)
     .where('categoria', '==', 'Alimento Húmedo')
+    .where('publicado', '==', true)
     .orderBy('marca', 'asc')
     .orderBy('fechaCreacion', 'asc')
     ).valueChanges();
@@ -149,6 +151,7 @@ export class FirebaseService {
     return this.afs.collection('productos', ref => ref
     .where('familia.perro', '==', true)
     .where('categoria', '==', 'Nutracéuticos')
+    .where('publicado', '==', true)
     .orderBy('marca', 'asc')
     .orderBy('fechaCreacion', 'asc')
     ).valueChanges();
@@ -158,6 +161,7 @@ export class FirebaseService {
     return this.afs.collection('productos', ref => ref
     .where('familia.perro', '==', true)
     .where('categoria', '==', 'Antipulgas')
+    .where('publicado', '==', true)
     .orderBy('marca', 'asc')
     .orderBy('fechaCreacion', 'asc')
     ).valueChanges();
@@ -167,6 +171,7 @@ export class FirebaseService {
     return this.afs.collection('productos', ref => ref
     .where('familia.perro', '==', true)
     .where('categoria', '==', 'Vacunas')
+    .where('publicado', '==', true)
     .orderBy('marca', 'asc')
     .orderBy('fechaCreacion', 'asc')
     ).valueChanges();
@@ -185,6 +190,7 @@ export class FirebaseService {
     return this.afs.collection('productos', ref => ref
     .where('familia.gato', '==', true)
     .where('categoria', '==', 'Alimento Seco')
+    .where('publicado', '==', true)
     .orderBy('marca', 'asc')
     .orderBy('fechaCreacion', 'asc')
     ).valueChanges();
@@ -194,6 +200,7 @@ export class FirebaseService {
     return this.afs.collection('productos', ref => ref
     .where('familia.gato', '==', true)
     .where('categoria', '==', 'Alimento Húmedo')
+    .where('publicado', '==', true)
     .orderBy('marca', 'asc')
     .orderBy('fechaCreacion', 'asc')
     ).valueChanges();
@@ -203,6 +210,7 @@ export class FirebaseService {
     return this.afs.collection('productos', ref => ref
     .where('familia.gato', '==', true)
     .where('categoria', '==', 'Nutracéuticos')
+    .where('publicado', '==', true)
     .orderBy('marca', 'asc')
     .orderBy('fechaCreacion', 'asc')
     ).valueChanges();
@@ -212,6 +220,7 @@ export class FirebaseService {
     return this.afs.collection('productos', ref => ref
     .where('familia.gato', '==', true)
     .where('categoria', '==', 'Antipulgas')
+    .where('publicado', '==', true)
     .orderBy('marca', 'asc')
     .orderBy('fechaCreacion', 'asc')
     ).valueChanges();
@@ -221,6 +230,7 @@ export class FirebaseService {
     return this.afs.collection('productos', ref => ref
     .where('familia.gato', '==', true)
     .where('categoria', '==', 'Higiene y cuidado')
+    .where('publicado', '==', true)
     .orderBy('marca', 'asc')
     .orderBy('fechaCreacion', 'asc')
     ).valueChanges();
@@ -230,6 +240,7 @@ export class FirebaseService {
     return this.afs.collection('productos', ref => ref
     .where('familia.gato', '==', true)
     .where('categoria', '==', 'Vacunas')
+    .where('publicado', '==', true)
     .orderBy('marca', 'asc')
     .orderBy('fechaCreacion', 'asc')
     ).valueChanges();

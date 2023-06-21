@@ -22,15 +22,17 @@
     </div>
 </div> -->
 
-<div class="boxProduct">
+<div class="boxProduct h-100 position-relative">
+
     <img class="image" [src]="producto.image" width="100%">
 
-    <div class="p-3 d-flex align-items-start flex-column" style="height: 200px">
+    <div class="p-3 d-flex align-items-start flex-column">
         <div class="d-flex justify-content-between align-items-center w-100 mb-2" style="font-size: 0.7rem;">
             <span class="rounded p-1 bg-secondary text-white">{{producto.marca}}</span>
             <span class="text-right">{{producto.categoria}}</span>
         </div>
         <div>
+            <!-- <span>{{producto.id}}</span> -->
             <p class="titulo mb-2">{{producto.nombre}}</p>
         </div>
 
@@ -39,10 +41,24 @@
             <span>{{producto.precio | currency:'S/ ':'symbol':'1.2'}}</span>
         </div> -->
 
-        <div *ngIf="!producto.precio">
+        <div class="" *ngIf="!producto.precio">
             <p class="small text-muted mb-1">Presentaciones:</p>
-            <span class="rounded-sm border px-2 py-1 mr-2 small" *ngFor="let presentacion of producto.presentaciones">{{presentacion.presentacion}} {{presentacion.medida}}</span>
+            
+            <!-- <span class="rounded-sm border px-2 py-1 mr-2 small" *ngFor="let presentacion of producto.presentaciones">{{presentacion.presentacion}} {{presentacion.medida}}</span> -->
+            <div class="d-flex">
+                <div  class="rounded-sm border px-2 py-1 mr-2 small" *ngFor="let presentacion of producto.presentaciones">
+                    {{presentacion.presentacion}} {{presentacion.medida}}
+                </div>
+            </div>
+            
+            
         </div>
+
+        <div class="w-100 mt-3">
+            <a class="btn btn-outline-secondary btn-block stretched-link" href="https://imexvetperu.riqra.com/" target="_blank">Compra aquí</a>
+        </div>
+
+        
 
         <!-- <div class="w-100" *ngIf="!producto.precio">
             <div class="small border-bottom d-flex justify-content-between py-1" *ngFor="let presentacion of producto.presentaciones">
